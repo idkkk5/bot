@@ -1,1 +1,1 @@
-worker: python asyncbot.py
+worker: python probot.py
