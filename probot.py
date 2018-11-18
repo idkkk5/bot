@@ -5,7 +5,6 @@ import json
 import os
 
 d=commands.Bot(command_prefix='D')
-Token='NTAxMTI1Njk2ODc0MDg2NDEw.Ds2z-A.KFtoPlt6sNfbgXxdxhOaO-Pikw0'
 os.chdir(r'/storage/sdcard0/.backups/Discord/Bots')
 async def playing():
  while True:
