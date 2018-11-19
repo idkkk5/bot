@@ -7,12 +7,7 @@ from time import strftime,localtime
 from datetime import datetime
 import time
 import platform
-import random
-import aiohttp
 import datetime
-import async_timeout
-from random import randint
-from discord.utils import get
 
 d=commands.Bot(command_prefix='D')
 os.chdir(r'/storage/sdcard0/.backups/Discord/Bots')
