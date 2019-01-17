@@ -13,15 +13,13 @@ d=commands.Bot(command_prefix='D')
 async def playing():
  while True:
   for x in range(999999):
-    await d.change_presence(game=discord.Game(name='Made by Dabs Gt#5590!!'))
+    await d.change_presence(game=discord.Game(name='Made by Dabs Yt#5590.'))
     await asyncio.sleep(18)
     await d.change_presence(game=discord.Game(name='Servers:'+str(len(d.servers))+'  Users:'+str(len(set(d.get_all_members())))))
     await asyncio.sleep(18)
-    await d.change_presence(game=discord.Game(name='24/7 Online Everyday!'))
+    await d.change_presence(game=discord.Game(name='Type Dhelp for info.'))
     await asyncio.sleep(18)
-    await d.change_presence(game=discord.Game(name='Owner left 19/11/2018(Will come back.)'))
-    await asyncio.sleep(18)
-    
+	
 @d.event
 async def on_ready():
   print('Bot is up!')
@@ -51,7 +49,7 @@ async def host(ctx):
   e3.add_field(name='Platform Name',value=os.name,inline=True)
   e3.add_field(name='Python Version',value=platform.python_version(),inline=True)
   e3.add_field(name='Discord Version',value=discord.__version__,inline=True)
-  e3.set_footer(text='Made by Dabs Gt#5590!')
+  e3.set_footer(text='Made by Dabs Yt#5590!')
   await d.send_message(p,embed=e3)
 
 d.run(os.getenv('Token'))
