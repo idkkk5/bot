@@ -8,7 +8,7 @@ from datetime import datetime
 import time
 import platform
 
-d=commands.Bot(command_prefix='D')
+d=commands.Bot(command_prefix='P')
 
 async def playing():
  while True:
@@ -17,7 +17,7 @@ async def playing():
     await asyncio.sleep(18)
     await d.change_presence(game=discord.Game(name='Servers:'+str(len(d.servers))+'  Users:'+str(len(set(d.get_all_members())))))
     await asyncio.sleep(18)
-    await d.change_presence(game=discord.Game(name='Type Dhelp for info.'))
+    await d.change_presence(game=discord.Game(name='Type Phelp for info.'))
     await asyncio.sleep(18)
 	
 @d.event
