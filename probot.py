@@ -52,4 +52,4 @@ async def host(ctx):
   e3.set_footer(text='Made by Dabs Yt#5590!')
   await d.send_message(p,embed=e3)
 
-d.run(os.getenv('Token'))
+d.run(os.getenv('Token')
