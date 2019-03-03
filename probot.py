@@ -8,48 +8,50 @@ from datetime import datetime
 import time
 import platform
 
-d=commands.Bot(command_prefix='P')
+p=commands.Bot(command_prefix='P')
+start=time.time()
 
 async def playing():
  while True:
   for x in range(999999):
-    await d.change_presence(game=discord.Game(name='Made by Dabs Yt#5590.'))
+    await p.change_presence(game=discord.Game(name='Made by Dabs Gt#5590'))
     await asyncio.sleep(18)
-    await d.change_presence(game=discord.Game(name='Servers:'+str(len(d.servers))+'  Users:'+str(len(set(d.get_all_members())))))
+    await p.change_presence(game=discord.Game(name='Servers:'+str(len(p.servers))+'  Users:'+str(len(set(p.get_all_members())))))
     await asyncio.sleep(18)
-    await d.change_presence(game=discord.Game(name='Type Phelp for info.'))
+    await p.change_presence(game=discord.Game(name='Type Phelp for info.'))
     await asyncio.sleep(18)
-	
-@d.event
+    
+@p.event
 async def on_ready():
   print('Bot is up!')
-  d.loop.create_task(playing())
+  p.loop.create_task(playing())
   
-@d.command(pass_context=True)
+@p.command(pass_context=True)
 async def ping():
-  await d.say('Pong!')
+  await p.say('Why you ping me **NANI**????')
   
-@d.command()
-async def time():
-  t=strftime('%d/%m/%Y %H:%M:%S',localtime())
-  await d.say(t)
-	
-@d.command(pass_context=True)
-async def host(ctx):
-  p = ctx.message.author
-  c = ctx.message.channel
-  
-  t = await d.send_message(c,'Calculating...')
-  ms = (t.timestamp-ctx.message.timestamp).total_seconds() * 1000
-  await d.delete_message(t)
-  pingt=f'{int(ms)}'
+p.remove_command('help')
+@p.command(pass_context=True)
+async def help(ctx):
+    embed=discord.Embed(color=0x800000)
+    embed.add_field(name='Help!',value='Shows this message')
+    embed.add_field(name='Puptime',value='Shows bot uptime')
+    await p.send_message(ctx.message.author,embed=embed)
 
-  e3=discord.Embed(title='Host info!',color=0x765400)
-  e3.add_field(name='Platform',value=platform.system(),inline=True)
-  e3.add_field(name='Platform Name',value=os.name,inline=True)
-  e3.add_field(name='Python Version',value=platform.python_version(),inline=True)
-  e3.add_field(name='Discord Version',value=discord.__version__,inline=True)
-  e3.set_footer(text='Made by Dabs Yt#5590!')
-  await d.send_message(p,embed=e3)
-
-d.run(os.getenv('Token')
+@p.command(pass_context=True)
+async def uptime(ctx,type:str=None):
+    now=time.time()
+    secs=int(now-start)
+    mins=int(secs//60)
+    hours=int(mins//60)
+    if type:
+        if type=='s':
+          await p.say(f'Uptime is {secs} seconds.')
+        elif type=='m':
+          await p.say(f'Uptime is {mins} minutes.')
+        elif type=='h':
+          await p.say(f'Uptime is {hours} hours.')
+    elif type==None:
+        await p.say('You must specify the type:s for seconds,m for minutes,h for hours.')
+    
+p.run(os.getenv('Token'))
