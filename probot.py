@@ -39,19 +39,9 @@ async def help(ctx):
     await p.send_message(ctx.message.author,embed=embed)
 
 @p.command(pass_context=True)
-async def uptime(ctx,type:str=None):
+async def uptime(ctx):
     now=time.time()
-    secs=int(now-start)
-    mins=int(secs//60)
-    hours=int(mins//60)
-    if type:
-        if type=='s':
-          await p.say(f'Uptime is {secs} seconds.')
-        elif type=='m':
-          await p.say(f'Uptime is {mins} minutes.')
-        elif type=='h':
-          await p.say(f'Uptime is {hours} hours.')
-    elif type==None:
-        await p.say('You must specify the type:s for seconds,m for minutes,h for hours.')
-    
+    secs=now-start
+    await bot.say('Uptime is: '+secs)
+
 p.run(os.getenv('Token'))
