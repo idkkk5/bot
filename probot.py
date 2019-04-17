@@ -28,7 +28,7 @@ async def on_ready():
   
 @p.command(pass_context=True)
 async def ping():
-  await p.say('Why you ping me **NANI**????')
+  await p.say('Why you ping me boi????')
   
 p.remove_command('help')
 @p.command(pass_context=True)
