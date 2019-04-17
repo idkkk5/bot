@@ -41,7 +41,7 @@ async def help(ctx):
 @p.command(pass_context=True)
 async def uptime(ctx):
     now=time.time()
-    secs=now-start
-    await bot.say('Uptime is: '+secs)
+    secs=int(now-start)
+    await bot.say(f'Uptime is: {secs} seconds.')
 
 p.run(os.getenv('Token'))
