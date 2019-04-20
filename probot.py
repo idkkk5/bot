@@ -14,12 +14,12 @@ start=time.time()
 async def playing():
  while True:
   for x in range(999999):
-    await p.change_presence(game=discord.Game(name='Made by Dabs Gt#5590'))
-    await asyncio.sleep(18)
-    await p.change_presence(game=discord.Game(name='Servers:'+str(len(p.servers))+'  Users:'+str(len(set(p.get_all_members())))))
-    await asyncio.sleep(18)
-    await p.change_presence(game=discord.Game(name='Type Phelp for info.'))
-    await asyncio.sleep(18)
+    await p.change_presence(game=discord.Game(name='Made by Dabs Yt#7312'))
+    await asyncio.sleep(15)
+    await p.change_presence(game=discord.Game(name='Users:'+str(len(set(p.get_all_members())))))
+    await asyncio.sleep(15)
+    await p.change_presence(game=discord.Game(name='Last update at:20/04/2019 23:56'))
+    await asyncio.sleep(15)
     
 @p.event
 async def on_ready():
