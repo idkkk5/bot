@@ -49,4 +49,4 @@ async def uptime(ctx):
     secs=int(now-start)
     await p.say(f'Uptime is: {secs} seconds.')
 
-p.run(os.getenv('token'))
+p.run(os.getenv('Token'))
