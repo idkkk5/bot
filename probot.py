@@ -28,7 +28,7 @@ async def on_ready():
   
 @p.event
 async def on_member_join(member):
-    role = discord.utils.get(member.server.roles, id="Dab Member")
+    role = discord.utils.get(member.server.roles,name="Dab Member")
     await p.add_roles(member, role)
 
 @p.command(pass_context=True)
