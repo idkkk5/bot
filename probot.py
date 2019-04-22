@@ -12,4 +12,4 @@ async def on_ready():
     await p.change_presence(game=discord.Game(name='Pro'))
     
     
-p.run(os.getenv('Token'))
+p.run(os.getenv('Tken'))
