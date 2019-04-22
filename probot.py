@@ -64,4 +64,4 @@ async def msg(ctx,c:discord.Channel,*,m:str):
     else:
      await p.say(f'No permission {ctx.message.author.mention}.')
 
-p.run(TOKEN)
+p.run(TOKEN
