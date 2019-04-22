@@ -1,52 +1,15 @@
 import discord
-import asyncio
 from discord.ext import commands
-import json
-import os
-from time import strftime,localtime
-from datetime import datetime
+import asyncio
 import time
-import platform
+import os
 
-p=commands.Bot(command_prefix='P',pm_help=True)
-start=time.time()
+p=commands.Bot(command_prefix='P')
 
-async def playing():
- while True:
-  for x in range(999999):
-    await p.change_presence(game=discord.Game(name='Made by Dabs Yt#7312'))
-    await asyncio.sleep(15)
-    await p.change_presence(game=discord.Game(name='Users:'+str(len(set(p.get_all_members())))))
-    await asyncio.sleep(15)
-    await p.change_presence(game=discord.Game(name='Last update at:20/04/2019 23:56'))
-    await asyncio.sleep(15)
-    
 @p.event
 async def on_ready():
-  print('Bot is up!')
-  p.loop.create_task(playing())
-  
-@p.event
-async def on_member_join(member):
-    role = discord.utils.get(member.server.roles,name="Dab Member")
-    await p.add_roles(member, role)
-
-@p.command(pass_context=True)
-async def ping():
-  await p.say('Why you ping me boi????')
-  
-p.remove_command('help')
-@p.command(pass_context=True)
-async def help(ctx):
-    embed=discord.Embed(color=0x800000)
-    embed.add_field(name='Help!',value='Shows this message')
-    embed.add_field(name='Puptime',value='Shows bot uptime')
-    await p.send_message(ctx.message.author,embed=embed)
-
-@p.command(pass_context=True)
-async def uptime(ctx):
-    now=time.time()
-    secs=int(now-start)
-    await p.say(f'Uptime is: {secs} seconds.')
-
+    print(f'{p.user.name} is up.')
+    await p.change_presence(game=discord.Game(name='Pro'))
+    
+    
 p.run(os.getenv('Token'))
